@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Temporary / dev files
+temporary screenshots/
+.DS_Store
+
+# Reference images (not part of the website)
+Money back guarantee example.png
+"Screenshot 2026-03-09 at 12.54.12 PM.png"
+citrusburn.com_.png
+CLAUDE.md
+screenshot.mjs
+serve.mjs
