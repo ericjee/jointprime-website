@@ -1,0 +1,484 @@
+<!--
+  ============================================================
+  Joint Prime — Banner + Pricing Cards Embed for ClickFunnels
+  ============================================================
+
+  INSTRUCTIONS:
+  1. Copy everything below into a ClickFunnels "Custom HTML" element.
+  2. Replace YOUR_PRODUCT_IMAGE_URL with your hosted image URL.
+  3. Replace YOUR_MADE_IN_USA_IMAGE_URL and Images/Credit%20cards%20trust%20badge.png
+     with your hosted trust badge URLs.
+  4. Replace YOUR_CHECKOUT_LINK_2BOTTLE, YOUR_CHECKOUT_LINK_6BOTTLE,
+     and YOUR_CHECKOUT_LINK_4BOTTLE with your actual ClickBank/checkout URLs.
+  ============================================================
+-->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ── SCOPED STYLES FOR EMBED ── */
+  .jp-embed *, .jp-embed *::before, .jp-embed *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .jp-embed {
+    font-family: 'Open Sans', sans-serif;
+    color: #1A1A1A;
+    -webkit-font-smoothing: antialiased;
+  }
+  .jp-embed img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ── SALE BANNER ── */
+  .jp-sale-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #6B1010 0%, #C8392B 28%, #E07B00 62%, #F5A800 100%);
+    padding: 40px 40px 28px;
+    gap: 0;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    position: relative;
+  }
+  .jp-sale-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 28px solid transparent;
+    border-right: 28px solid transparent;
+    border-top: 22px solid #F5A800;
+  }
+  .jp-banner-inner {
+    max-width: 840px;
+    width: 100%;
+    text-align: center;
+  }
+  .jp-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  .jp-headline span { color: #fff; }
+  .jp-subhead {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #FFE066;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+  }
+  .jp-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding-top: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .jp-status-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  }
+  .jp-sale-dot {
+    width: 11px; height: 11px;
+    background: #4ade80;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(74,222,128,0.3);
+    animation: jpSalePulse 1.2s ease-in-out infinite;
+  }
+  @keyframes jpSalePulse {
+    0%,100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 3px rgba(74,222,128,0.3); }
+    50%     { opacity: 0.7; transform: scale(0.8); box-shadow: 0 0 0 6px rgba(74,222,128,0.15); }
+  }
+  .jp-status-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+  .jp-stock-bar-wrap {
+    width: 130px;
+    height: 10px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .jp-stock-bar-fill {
+    height: 100%;
+    width: 20%;
+    background: #ff2020;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(255,32,32,0.8);
+    animation: jpStockPulse 1.8s ease-in-out infinite;
+  }
+  @keyframes jpStockPulse {
+    0%,100% { opacity: 1; box-shadow: 0 0 8px rgba(255,32,32,0.8); }
+    50%     { opacity: 0.7; box-shadow: 0 0 16px rgba(255,32,32,1); }
+  }
+
+  /* ── PRICING GRID ── */
+  .jp-pricing-wrap {
+    max-width: 1020px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 56px 20px 80px;
+    background: #fff;
+  }
+  .jp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  /* ── CARD ── */
+  .jp-card {
+    background: #fff;
+    border: 1.5px solid #e5e0d8;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding-bottom: 24px;
+  }
+  .jp-card-popular {
+    border: 2.5px solid #E07B00;
+    box-shadow: 0 8px 40px rgba(224,123,0,0.18);
+    transform: translateY(-10px);
+    transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
+    background: #FFF9F0;
+  }
+  .jp-card-popular:hover {
+    transform: translateY(-18px);
+    box-shadow: 0 20px 56px rgba(224,123,0,0.28);
+  }
+
+  /* Tier band */
+  .jp-tier-band {
+    width: 100%;
+    padding: 13px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #9ca3af;
+    margin-bottom: 0;
+  }
+  .jp-tier-band-popular {
+    background: linear-gradient(90deg, #C8392B, #E07B00);
+  }
+
+  /* Card body */
+  .jp-card-body {
+    padding: 22px 22px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .jp-bottles-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    color: #1A1A1A;
+    margin-bottom: 4px;
+  }
+  .jp-supply-label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 14px;
+  }
+  .jp-product-img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 6px 16px rgba(224,123,0,0.2));
+  }
+  .jp-per-bottle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 72px;
+    color: #1A1A1A;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  .jp-per-bottle sup { font-size: 30px; vertical-align: super; }
+  .jp-per-bottle-label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 14px;
+  }
+  .jp-savings {
+    display: inline-block;
+    background: #FFF0EE;
+    border: 1px solid #f8c0b8;
+    color: #C8392B;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+
+  /* Perk boxes */
+  .jp-perk-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+  .jp-perk-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    padding: 11px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: left;
+  }
+  .jp-perk-discount { background: #FFF0EE; border: 1px solid #fecaca; color: #C8392B; }
+  .jp-perk-bonus    { background: #F0FDF4; border: 1px solid #86efac; color: #15803d; }
+  .jp-perk-ship     { background: #EFF6FF; border: 1px solid #93c5fd; color: #1d4ed8; }
+  .jp-perk-icon     { font-size: 18px; flex-shrink: 0; }
+
+  /* CTA button */
+  .jp-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 19px;
+    padding: 16px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    background: linear-gradient(90deg, #E07B00, #F5A800);
+    box-shadow: 0 4px 16px rgba(245,168,0,0.45);
+    transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.15s ease;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  .jp-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(245,168,0,0.6);
+    color: #fff;
+    text-decoration: none;
+  }
+  .jp-cta:active { transform: translateY(0); }
+
+  /* Price below button */
+  .jp-price-below {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 19px;
+    color: #111;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .jp-original { text-decoration: line-through; color: #999; }
+  .jp-total-new {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    color: #111;
+  }
+  .jp-shipping {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    color: #111;
+    margin-bottom: 16px;
+  }
+  .jp-shipping-free {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #15803d;
+    margin-bottom: 16px;
+  }
+  .jp-trust-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+  .jp-trust-badges img { height: 40px; width: auto; object-fit: contain; }
+
+  /* ── MOBILE RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .jp-grid { grid-template-columns: 1fr; gap: 24px; }
+    .jp-card-popular { transform: none; order: -1; }
+    .jp-card-bundle  { order: 0; }
+    .jp-card-basic   { order: 1; }
+    .jp-card-popular:hover { transform: translateY(-6px); }
+    .jp-headline { font-size: 24px; }
+    .jp-subhead { font-size: 28px; }
+    .jp-sale-banner { padding: 24px 20px 16px; }
+    .jp-status-row { flex-direction: column; gap: 14px; }
+  }
+</style>
+
+<!-- ============================================================
+     HTML — Paste this entire block into a ClickFunnels Custom HTML element
+     ============================================================ -->
+<div class="jp-embed">
+
+  <!-- ===== SALE BANNER ===== -->
+  <div class="jp-sale-banner">
+    <div class="jp-banner-inner">
+      <h2 class="jp-headline">Claim Your Discounted <span>Joint Prime</span> Below While Stock Lasts</h2>
+      <p class="jp-subhead">Act Now!</p>
+    </div>
+    <div class="jp-status-row">
+      <div class="jp-status-left">
+        <div class="jp-sale-dot"></div>
+        Sale Status: Active
+      </div>
+      <div class="jp-status-right">
+        Stock Level:&nbsp;
+        <div class="jp-stock-bar-wrap"><div class="jp-stock-bar-fill"></div></div>
+        <span style="color:#fff;font-weight:900;">LOW</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PRICING CARDS ===== -->
+  <div class="jp-pricing-wrap">
+    <div class="jp-grid">
+
+      <!-- BASIC: 2 bottles -->
+      <div class="jp-card jp-card-basic">
+        <div class="jp-tier-band">Basic</div>
+        <div class="jp-card-body">
+          <div class="jp-bottles-label">2 Bottles</div>
+          <div class="jp-supply-label">60-Day Supply</div>
+          <img src="YOUR_PRODUCT_IMAGE_URL" alt="Joint Prime 2 Bottles" class="jp-product-img">
+          <div class="jp-per-bottle"><sup>$</sup>69</div>
+          <div class="jp-per-bottle-label">per bottle</div>
+          <div class="jp-savings">You Save $60</div>
+          <a href="YOUR_CHECKOUT_LINK_2BOTTLE" class="jp-cta">Add to Cart →</a>
+          <div class="jp-price-below">
+            <span class="jp-original">$198</span>
+            <span class="jp-total-new">$138</span>
+          </div>
+          <div class="jp-shipping">+ $9.99 Shipping Fee</div>
+        </div>
+        <div class="jp-trust-badges">
+          <img src="YOUR_MADE_IN_USA_IMAGE_URL" alt="Made in USA">
+          <img src="Images/Credit%20cards%20trust%20badge.png" alt="Secure Payment">
+        </div>
+      </div>
+
+      <!-- MOST POPULAR: 6 bottles -->
+      <div class="jp-card jp-card-popular">
+        <div class="jp-tier-band jp-tier-band-popular">⭐ Most Popular</div>
+        <div class="jp-card-body">
+          <div class="jp-bottles-label">6 Bottles</div>
+          <div class="jp-supply-label">180-Day Supply</div>
+          <img src="YOUR_PRODUCT_IMAGE_URL" alt="Joint Prime 6 Bottles" class="jp-product-img">
+          <div class="jp-per-bottle"><sup>$</sup>39</div>
+          <div class="jp-per-bottle-label">per bottle</div>
+          <div class="jp-savings">You Save $360</div>
+          <div class="jp-perk-boxes">
+            <div class="jp-perk-box jp-perk-discount"><span class="jp-perk-icon">🔥</span> Biggest Discount</div>
+            <div class="jp-perk-box jp-perk-bonus"><span class="jp-perk-icon">🎁</span> 3 FREE Bonuses</div>
+            <div class="jp-perk-box jp-perk-ship"><span class="jp-perk-icon">🚚</span> FREE USA Shipping</div>
+          </div>
+          <a href="YOUR_CHECKOUT_LINK_6BOTTLE" class="jp-cta">Add to Cart →</a>
+          <div class="jp-price-below">
+            <span class="jp-original">$594</span>
+            <span class="jp-total-new">$234</span>
+          </div>
+          <div class="jp-shipping-free">✓ FREE USA Shipping Included</div>
+        </div>
+        <div class="jp-trust-badges">
+          <img src="YOUR_MADE_IN_USA_IMAGE_URL" alt="Made in USA">
+          <img src="Images/Credit%20cards%20trust%20badge.png" alt="Secure Payment">
+        </div>
+      </div>
+
+      <!-- BUNDLE: 4 bottles -->
+      <div class="jp-card jp-card-bundle">
+        <div class="jp-tier-band">Bundle</div>
+        <div class="jp-card-body">
+          <div class="jp-bottles-label">4 Bottles</div>
+          <div class="jp-supply-label">120-Day Supply</div>
+          <img src="YOUR_PRODUCT_IMAGE_URL" alt="Joint Prime 4 Bottles" class="jp-product-img">
+          <div class="jp-per-bottle"><sup>$</sup>59</div>
+          <div class="jp-per-bottle-label">per bottle</div>
+          <div class="jp-savings">You Save $160</div>
+          <div class="jp-perk-boxes" style="margin-bottom:18px;">
+            <div class="jp-perk-box jp-perk-bonus"><span class="jp-perk-icon">🎁</span> 3 FREE Bonuses</div>
+          </div>
+          <a href="YOUR_CHECKOUT_LINK_4BOTTLE" class="jp-cta">Add to Cart →</a>
+          <div class="jp-price-below">
+            <span class="jp-original">$396</span>
+            <span class="jp-total-new">$236</span>
+          </div>
+          <div class="jp-shipping">+ $9.99 Shipping Fee</div>
+        </div>
+        <div class="jp-trust-badges">
+          <img src="YOUR_MADE_IN_USA_IMAGE_URL" alt="Made in USA">
+          <img src="Images/Credit%20cards%20trust%20badge.png" alt="Secure Payment">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
