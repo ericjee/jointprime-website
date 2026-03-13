@@ -1432,7 +1432,7 @@
 
     /* ── PRICING ── */
     .pricing-section { background: #fff; padding: 0 0 80px; }
-    .pricing-section .container { max-width: 1020px; }
+    .pricing-section .container { max-width: 1100px; }
 
     /* Full-width sale banner */
     .pricing-sale-banner {
@@ -1573,7 +1573,7 @@
       text-align: center;
       position: relative;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      padding-bottom: 24px;
+      padding-bottom: 18px;
     }
     .pricing-card-popular {
       border: 2.5px solid var(--orange);
@@ -1591,7 +1591,7 @@
       padding: 13px 16px;
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
-      font-size: 17px;
+      font-size: 22px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #fff;
@@ -1601,26 +1601,42 @@
     .card-tier-band-popular {
       background: linear-gradient(90deg, var(--red), var(--orange));
     }
-    .pricing-card-body { padding: 22px 22px 0; width: 100%; display: flex; flex-direction: column; align-items: center; }
+    .pricing-card-body { padding: 16px 18px 0; width: 100%; display: flex; flex-direction: column; align-items: center; }
     .pricing-bottles-label {
       font-family: 'Montserrat', sans-serif;
       font-weight: 900;
-      font-size: 26px;
+      font-size: 32px;
       color: var(--dark);
-      margin-bottom: 4px;
+      margin-bottom: 0;
+      line-height: 1.1;
     }
     .pricing-supply-label {
       font-family: 'Open Sans', sans-serif;
-      font-size: 17px;
+      font-size: 19px;
       font-weight: 600;
       color: #555;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
     .pricing-img {
       width: 100%;
       max-width: 200px;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       filter: drop-shadow(0 6px 16px rgba(224,123,0,0.2));
+    }
+    .pricing-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+    .pricing-price-strikethrough {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      color: #b0b0b0;
+      text-decoration: line-through;
+      line-height: 1;
     }
     .pricing-per-bottle {
       font-family: 'Montserrat', sans-serif;
@@ -1630,40 +1646,52 @@
       line-height: 1;
       margin-bottom: 0;
     }
+    .pricing-per-bottle-popular {
+      color: #15803d;
+    }
     .pricing-per-bottle sup { font-size: 30px; vertical-align: super; }
+    .pricing-per-bottle-inline {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #888;
+      line-height: 1.1;
+      align-self: flex-end;
+      margin-bottom: 8px;
+    }
     .pricing-per-bottle-label {
       font-family: 'Open Sans', sans-serif;
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 600;
-      color: #111;
-      margin-bottom: 14px;
+      color: #888;
+      margin-bottom: 10px;
     }
     .pricing-savings {
       display: inline-block;
       background: #FFF0EE;
       border: 1px solid #f8c0b8;
-      color: var(--red);
+      color: #E5200C;
       font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      padding: 5px 14px;
+      font-weight: 800;
+      font-size: 20px;
+      padding: 6px 18px;
       border-radius: 20px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     /* Colorful perk boxes for popular card */
     .pricing-perk-boxes {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
       width: 100%;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     .perk-box {
       display: flex;
       align-items: center;
       gap: 10px;
       border-radius: 8px;
-      padding: 11px 16px;
+      padding: 10px 14px;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: 15px;
@@ -1672,7 +1700,29 @@
     .perk-box-discount { background: #FFF0EE; border: 1px solid #fecaca; color: var(--red); }
     .perk-box-bonus    { background: #F0FDF4; border: 1px solid #86efac; color: #15803d; }
     .perk-box-ship     { background: #EFF6FF; border: 1px solid #93c5fd; color: #1d4ed8; }
-    .perk-box-icon     { font-size: 18px; flex-shrink: 0; }
+    .perk-box-icon     {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .perk-box-discount .perk-box-icon { background: var(--red); }
+    .perk-box-bonus .perk-box-icon    { background: #15803d; }
+    .perk-box-ship .perk-box-icon     { background: #1d4ed8; }
+    .perk-box-guarantee { background: #FDF6E3; border: 1px solid #d4a833; color: #8B6914; }
+    .perk-box-guarantee .perk-box-icon { background: #8B6914; }
+    .perk-box-icon svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
     /* CTA */
     .pricing-cta {
       display: block;
@@ -1681,7 +1731,7 @@
       color: #fff;
       font-family: 'Montserrat', sans-serif;
       font-weight: 900;
-      font-size: 19px;
+      font-size: 22px;
       padding: 16px 16px;
       border-radius: 8px;
       text-decoration: none;
@@ -1689,7 +1739,7 @@
       background: linear-gradient(90deg, var(--orange), var(--gold));
       box-shadow: 0 4px 16px rgba(245,168,0,0.45);
       transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.15s ease;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .pricing-cta:hover {
       transform: translateY(-2px);
@@ -1701,7 +1751,7 @@
       font-family: 'Open Sans', sans-serif;
       font-size: 19px;
       color: #111;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1721,24 +1771,26 @@
       font-family: 'Open Sans', sans-serif;
       font-size: 17px;
       color: #111;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .pricing-shipping-free {
       font-family: 'Open Sans', sans-serif;
       font-size: 17px;
       font-weight: 700;
       color: #15803d;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .pricing-trust-badges {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 0;
       flex-wrap: wrap;
-      padding: 0 20px;
+      padding: 0 8px;
+      row-gap: 0;
     }
-    .pricing-trust-badges img { height: 40px; width: auto; object-fit: contain; }
+    .pricing-trust-badges img { height: 62px; width: auto; object-fit: contain; }
+    .pricing-trust-badges img:last-child { margin-top: -10px; }
     @media (max-width: 768px) {
       .pricing-grid { grid-template-columns: 1fr; gap: 24px; }
       .pricing-card-popular { transform: none; order: -1; }
@@ -2459,7 +2511,10 @@
             <img src="Images/Joint%20Prime%20(full%20final)-01_1%20(1).png" alt="Joint Prime 2 Bottles" class="pricing-img">
             <div class="pricing-per-bottle"><sup>$</sup>69</div>
             <div class="pricing-per-bottle-label">per bottle</div>
-            <div class="pricing-savings">You Save $60</div>
+            <div class="pricing-savings">You Save $60!</div>
+            <div class="pricing-perk-boxes" style="margin-bottom:14px;">
+              <div class="perk-box perk-box-guarantee"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 365 Days Guarantee</div>
+            </div>
             <a href="#" class="pricing-cta">Add to Cart →</a>
             <div class="pricing-price-below">
               <span class="pricing-original">$198</span>
@@ -2480,20 +2535,23 @@
             <div class="pricing-bottles-label">6 Bottles</div>
             <div class="pricing-supply-label">180-Day Supply</div>
             <img src="Images/Joint%20Prime%20(full%20final)-01_1%20(1).png" alt="Joint Prime 6 Bottles" class="pricing-img">
-            <div class="pricing-per-bottle"><sup>$</sup>39</div>
-            <div class="pricing-per-bottle-label">per bottle</div>
-            <div class="pricing-savings">You Save $360</div>
+            <div class="pricing-price-row">
+              <span class="pricing-price-strikethrough">$69</span>
+              <div class="pricing-per-bottle pricing-per-bottle-popular"><sup>$</sup>39</div>
+              <span class="pricing-per-bottle-inline">Per<br>Bottle</span>
+            </div>
+            <div class="pricing-savings">You Save $360!</div>
             <div class="pricing-perk-boxes">
-              <div class="perk-box perk-box-discount"><span class="perk-box-icon">🔥</span> Biggest Discount</div>
-              <div class="perk-box perk-box-bonus"><span class="perk-box-icon">🎁</span> 3 FREE Bonuses</div>
-              <div class="perk-box perk-box-ship"><span class="perk-box-icon">🚚</span> FREE USA Shipping</div>
+              <div class="perk-box perk-box-discount"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> Biggest Discount</div>
+              <div class="perk-box perk-box-bonus"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 3 FREE Bonuses</div>
+              <div class="perk-box perk-box-ship"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> Free Shipping</div>
+              <div class="perk-box perk-box-guarantee"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 365 Days Guarantee</div>
             </div>
             <a href="#" class="pricing-cta">Add to Cart →</a>
             <div class="pricing-price-below">
               <span class="pricing-original">$594</span>
               <span class="pricing-total-new">$234</span>
             </div>
-            <div class="pricing-shipping-free">✓ FREE USA Shipping Included</div>
           </div>
           <div class="pricing-trust-badges">
             <img src="Images/made_in_usa_premium.avif" alt="Made in USA">
@@ -2508,11 +2566,15 @@
             <div class="pricing-bottles-label">4 Bottles</div>
             <div class="pricing-supply-label">120-Day Supply</div>
             <img src="Images/Joint%20Prime%20(full%20final)-01_1%20(1).png" alt="Joint Prime 4 Bottles" class="pricing-img">
-            <div class="pricing-per-bottle"><sup>$</sup>59</div>
-            <div class="pricing-per-bottle-label">per bottle</div>
-            <div class="pricing-savings">You Save $160</div>
-            <div class="pricing-perk-boxes" style="margin-bottom:18px;">
-              <div class="perk-box perk-box-bonus"><span class="perk-box-icon">🎁</span> 3 FREE Bonuses</div>
+            <div class="pricing-price-row">
+              <span class="pricing-price-strikethrough">$69</span>
+              <div class="pricing-per-bottle"><sup>$</sup>59</div>
+              <span class="pricing-per-bottle-inline">Per<br>Bottle</span>
+            </div>
+            <div class="pricing-savings">You Save $160!</div>
+            <div class="pricing-perk-boxes" style="margin-bottom:14px;">
+              <div class="perk-box perk-box-bonus"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 3 FREE Bonuses</div>
+              <div class="perk-box perk-box-guarantee"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 365 Days Guarantee</div>
             </div>
             <a href="#" class="pricing-cta">Add to Cart →</a>
             <div class="pricing-price-below">
@@ -2653,7 +2715,10 @@
             <img src="Images/Joint%20Prime%20(full%20final)-01_1%20(1).png" alt="Joint Prime 2 Bottles" class="pricing-img">
             <div class="pricing-per-bottle"><sup>$</sup>69</div>
             <div class="pricing-per-bottle-label">per bottle</div>
-            <div class="pricing-savings">You Save $60</div>
+            <div class="pricing-savings">You Save $60!</div>
+            <div class="pricing-perk-boxes" style="margin-bottom:14px;">
+              <div class="perk-box perk-box-guarantee"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 365 Days Guarantee</div>
+            </div>
             <a href="#" class="pricing-cta">Add to Cart →</a>
             <div class="pricing-price-below">
               <span class="pricing-original">$198</span>
@@ -2674,20 +2739,23 @@
             <div class="pricing-bottles-label">6 Bottles</div>
             <div class="pricing-supply-label">180-Day Supply</div>
             <img src="Images/Joint%20Prime%20(full%20final)-01_1%20(1).png" alt="Joint Prime 6 Bottles" class="pricing-img">
-            <div class="pricing-per-bottle"><sup>$</sup>39</div>
-            <div class="pricing-per-bottle-label">per bottle</div>
-            <div class="pricing-savings">You Save $360</div>
+            <div class="pricing-price-row">
+              <span class="pricing-price-strikethrough">$69</span>
+              <div class="pricing-per-bottle pricing-per-bottle-popular"><sup>$</sup>39</div>
+              <span class="pricing-per-bottle-inline">Per<br>Bottle</span>
+            </div>
+            <div class="pricing-savings">You Save $360!</div>
             <div class="pricing-perk-boxes">
-              <div class="perk-box perk-box-discount"><span class="perk-box-icon">🔥</span> Biggest Discount</div>
-              <div class="perk-box perk-box-bonus"><span class="perk-box-icon">🎁</span> 3 FREE Bonuses</div>
-              <div class="perk-box perk-box-ship"><span class="perk-box-icon">🚚</span> FREE USA Shipping</div>
+              <div class="perk-box perk-box-discount"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> Biggest Discount</div>
+              <div class="perk-box perk-box-bonus"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 3 FREE Bonuses</div>
+              <div class="perk-box perk-box-ship"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> Free Shipping</div>
+              <div class="perk-box perk-box-guarantee"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 365 Days Guarantee</div>
             </div>
             <a href="#" class="pricing-cta">Add to Cart →</a>
             <div class="pricing-price-below">
               <span class="pricing-original">$594</span>
               <span class="pricing-total-new">$234</span>
             </div>
-            <div class="pricing-shipping-free">✓ FREE USA Shipping Included</div>
           </div>
           <div class="pricing-trust-badges">
             <img src="Images/made_in_usa_premium.avif" alt="Made in USA">
@@ -2702,11 +2770,15 @@
             <div class="pricing-bottles-label">4 Bottles</div>
             <div class="pricing-supply-label">120-Day Supply</div>
             <img src="Images/Joint%20Prime%20(full%20final)-01_1%20(1).png" alt="Joint Prime 4 Bottles" class="pricing-img">
-            <div class="pricing-per-bottle"><sup>$</sup>59</div>
-            <div class="pricing-per-bottle-label">per bottle</div>
-            <div class="pricing-savings">You Save $160</div>
-            <div class="pricing-perk-boxes" style="margin-bottom:18px;">
-              <div class="perk-box perk-box-bonus"><span class="perk-box-icon">🎁</span> 3 FREE Bonuses</div>
+            <div class="pricing-price-row">
+              <span class="pricing-price-strikethrough">$69</span>
+              <div class="pricing-per-bottle"><sup>$</sup>59</div>
+              <span class="pricing-per-bottle-inline">Per<br>Bottle</span>
+            </div>
+            <div class="pricing-savings">You Save $160!</div>
+            <div class="pricing-perk-boxes" style="margin-bottom:14px;">
+              <div class="perk-box perk-box-bonus"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 3 FREE Bonuses</div>
+              <div class="perk-box perk-box-guarantee"><span class="perk-box-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 365 Days Guarantee</div>
             </div>
             <a href="#" class="pricing-cta">Add to Cart →</a>
             <div class="pricing-price-below">
