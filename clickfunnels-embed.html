@@ -162,8 +162,10 @@
   .jp-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 20px;
     align-items: start;
+    max-width: 1260px;
+    margin: 0 auto;
   }
 
   /* ── CARD ── */
@@ -178,12 +180,12 @@
     text-align: center;
     position: relative;
     box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    padding-bottom: 28px;
+    padding-bottom: 18px;
   }
   .jp-card-popular {
     border: 2.5px solid #E07B00;
     box-shadow: 0 8px 40px rgba(224,123,0,0.18);
-    transform: translateY(-14px);
+    transform: translateY(-10px);
     transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
     background: #FFF9F0;
   }
@@ -195,10 +197,10 @@
   /* Tier band */
   .jp-tier-band {
     width: 100%;
-    padding: 16px 16px;
+    padding: 13px 16px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: 18px;
+    font-size: 22px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #fff;
@@ -211,7 +213,7 @@
 
   /* Card body */
   .jp-card-body {
-    padding: 32px 32px 0;
+    padding: 16px 18px 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -220,66 +222,94 @@
   .jp-bottles-label {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: 30px;
+    font-size: 32px;
     color: #1A1A1A;
-    margin-bottom: 6px;
+    margin-bottom: 0;
+    line-height: 1.1;
   }
   .jp-supply-label {
     font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
     color: #555;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
   .jp-product-img {
     width: 100%;
-    max-width: 280px;
-    margin-bottom: 20px;
+    max-width: 200px;
+    margin-bottom: 10px;
     filter: drop-shadow(0 6px 16px rgba(224,123,0,0.2));
+  }
+  .jp-price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 2px;
+  }
+  .jp-price-strikethrough {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #b0b0b0;
+    text-decoration: line-through;
+    line-height: 1;
   }
   .jp-per-bottle {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: 80px;
+    font-size: 72px;
     color: #1A1A1A;
     line-height: 1;
     margin-bottom: 0;
   }
-  .jp-per-bottle sup { font-size: 34px; vertical-align: super; }
+  .jp-per-bottle-popular {
+    color: #15803d;
+  }
+  .jp-per-bottle sup { font-size: 30px; vertical-align: super; }
+  .jp-per-bottle-inline {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #888;
+    line-height: 1.1;
+    align-self: flex-end;
+    margin-bottom: 8px;
+  }
   .jp-per-bottle-label {
     font-family: 'Open Sans', sans-serif;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 600;
-    color: #111;
-    margin-bottom: 14px;
+    color: #888;
+    margin-bottom: 10px;
   }
   .jp-savings {
     display: inline-block;
     background: #FFF0EE;
     border: 1px solid #f8c0b8;
-    color: #C8392B;
+    color: #E5200C;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    padding: 5px 14px;
+    font-weight: 800;
+    font-size: 20px;
+    padding: 6px 18px;
     border-radius: 20px;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
   }
 
   /* Perk boxes */
   .jp-perk-boxes {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     width: 100%;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
   }
   .jp-perk-box {
     display: flex;
     align-items: center;
     gap: 10px;
     border-radius: 8px;
-    padding: 11px 16px;
+    padding: 10px 14px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 15px;
@@ -288,7 +318,29 @@
   .jp-perk-discount { background: #FFF0EE; border: 1px solid #fecaca; color: #C8392B; }
   .jp-perk-bonus    { background: #F0FDF4; border: 1px solid #86efac; color: #15803d; }
   .jp-perk-ship     { background: #EFF6FF; border: 1px solid #93c5fd; color: #1d4ed8; }
-  .jp-perk-icon     { font-size: 18px; flex-shrink: 0; }
+  .jp-perk-guarantee { background: #FDF6E3; border: 1px solid #d4a833; color: #8B6914; }
+  .jp-perk-icon     {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .jp-perk-discount .jp-perk-icon { background: #C8392B; }
+  .jp-perk-bonus .jp-perk-icon    { background: #15803d; }
+  .jp-perk-ship .jp-perk-icon     { background: #1d4ed8; }
+  .jp-perk-guarantee .jp-perk-icon { background: #8B6914; }
+  .jp-perk-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 
   /* CTA button */
   .jp-cta {
@@ -298,15 +350,15 @@
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: 21px;
-    padding: 18px 16px;
-    border-radius: 10px;
+    font-size: 22px;
+    padding: 16px 16px;
+    border-radius: 8px;
     text-decoration: none;
     letter-spacing: 0.02em;
     background: linear-gradient(90deg, #E07B00, #F5A800);
     box-shadow: 0 4px 16px rgba(245,168,0,0.45);
     transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.15s ease;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     cursor: pointer;
   }
   .jp-cta:hover {
@@ -320,43 +372,45 @@
   /* Price below button */
   .jp-price-below {
     font-family: 'Open Sans', sans-serif;
-    font-size: 19px;
+    font-size: 24px;
     color: #111;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
   }
-  .jp-original { text-decoration: line-through; color: #999; }
+  .jp-original { text-decoration: line-through; text-decoration-color: #E5200C; color: #999; }
   .jp-total-new {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: 19px;
+    font-size: 24px;
     color: #111;
   }
   .jp-shipping {
     font-family: 'Open Sans', sans-serif;
-    font-size: 17px;
+    font-size: 20px;
     color: #111;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
   .jp-shipping-free {
     font-family: 'Open Sans', sans-serif;
     font-size: 17px;
     font-weight: 700;
     color: #15803d;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
   .jp-trust-badges {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 0;
     flex-wrap: wrap;
-    padding: 0 20px;
+    padding: 0 8px;
+    row-gap: 0;
   }
-  .jp-trust-badges img { height: 40px; width: auto; object-fit: contain; }
+  .jp-trust-badges img { height: 62px; width: auto; object-fit: contain; }
+  .jp-trust-badges img:last-child { margin-top: -10px; }
 
   /* ── MOBILE RESPONSIVE ── */
   @media (max-width: 768px) {
@@ -409,7 +463,10 @@
           <img src="YOUR_PRODUCT_IMAGE_URL" alt="Joint Prime 2 Bottles" class="jp-product-img">
           <div class="jp-per-bottle"><sup>$</sup>69</div>
           <div class="jp-per-bottle-label">per bottle</div>
-          <div class="jp-savings">You Save $60</div>
+          <div class="jp-savings">You Save $60!</div>
+          <div class="jp-perk-boxes" style="margin-bottom:14px;">
+            <div class="jp-perk-box jp-perk-guarantee"><span class="jp-perk-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 365 Days Guarantee</div>
+          </div>
           <a href="YOUR_CHECKOUT_LINK_2BOTTLE" class="jp-cta">Add to Cart →</a>
           <div class="jp-price-below">
             <span class="jp-original">$198</span>
@@ -430,20 +487,23 @@
           <div class="jp-bottles-label">6 Bottles</div>
           <div class="jp-supply-label">180-Day Supply</div>
           <img src="YOUR_PRODUCT_IMAGE_URL" alt="Joint Prime 6 Bottles" class="jp-product-img">
-          <div class="jp-per-bottle"><sup>$</sup>39</div>
-          <div class="jp-per-bottle-label">per bottle</div>
-          <div class="jp-savings">You Save $360</div>
+          <div class="jp-price-row">
+            <span class="jp-price-strikethrough">$69</span>
+            <div class="jp-per-bottle jp-per-bottle-popular"><sup>$</sup>39</div>
+            <span class="jp-per-bottle-inline">Per<br>Bottle</span>
+          </div>
+          <div class="jp-savings">You Save $360!</div>
           <div class="jp-perk-boxes">
-            <div class="jp-perk-box jp-perk-discount"><span class="jp-perk-icon">🔥</span> Biggest Discount</div>
-            <div class="jp-perk-box jp-perk-bonus"><span class="jp-perk-icon">🎁</span> 3 FREE Bonuses</div>
-            <div class="jp-perk-box jp-perk-ship"><span class="jp-perk-icon">🚚</span> FREE USA Shipping</div>
+            <div class="jp-perk-box jp-perk-discount"><span class="jp-perk-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> Biggest Discount</div>
+            <div class="jp-perk-box jp-perk-bonus"><span class="jp-perk-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 3 FREE Bonuses</div>
+            <div class="jp-perk-box jp-perk-ship"><span class="jp-perk-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> Free Shipping</div>
+            <div class="jp-perk-box jp-perk-guarantee"><span class="jp-perk-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 365 Days Guarantee</div>
           </div>
           <a href="YOUR_CHECKOUT_LINK_6BOTTLE" class="jp-cta">Add to Cart →</a>
           <div class="jp-price-below">
             <span class="jp-original">$594</span>
             <span class="jp-total-new">$234</span>
           </div>
-          <div class="jp-shipping-free">✓ FREE USA Shipping Included</div>
         </div>
         <div class="jp-trust-badges">
           <img src="YOUR_MADE_IN_USA_IMAGE_URL" alt="Made in USA">
@@ -458,11 +518,15 @@
           <div class="jp-bottles-label">4 Bottles</div>
           <div class="jp-supply-label">120-Day Supply</div>
           <img src="YOUR_PRODUCT_IMAGE_URL" alt="Joint Prime 4 Bottles" class="jp-product-img">
-          <div class="jp-per-bottle"><sup>$</sup>59</div>
-          <div class="jp-per-bottle-label">per bottle</div>
-          <div class="jp-savings">You Save $160</div>
-          <div class="jp-perk-boxes" style="margin-bottom:18px;">
-            <div class="jp-perk-box jp-perk-bonus"><span class="jp-perk-icon">🎁</span> 3 FREE Bonuses</div>
+          <div class="jp-price-row">
+            <span class="jp-price-strikethrough">$69</span>
+            <div class="jp-per-bottle"><sup>$</sup>59</div>
+            <span class="jp-per-bottle-inline">Per<br>Bottle</span>
+          </div>
+          <div class="jp-savings">You Save $160!</div>
+          <div class="jp-perk-boxes" style="margin-bottom:14px;">
+            <div class="jp-perk-box jp-perk-bonus"><span class="jp-perk-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 3 FREE Bonuses</div>
+            <div class="jp-perk-box jp-perk-guarantee"><span class="jp-perk-icon"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"></polyline></svg></span> 365 Days Guarantee</div>
           </div>
           <a href="YOUR_CHECKOUT_LINK_4BOTTLE" class="jp-cta">Add to Cart →</a>
           <div class="jp-price-below">
